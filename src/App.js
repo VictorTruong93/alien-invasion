@@ -1,13 +1,19 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import PropTypes from 'prop-types';
 
-render() {
-  return (
-    <div className="App">
-    
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
+        <h1>{this.props.message}</h1>
+      </div>
+    );
+  }
 }
+
+App.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 export default App;

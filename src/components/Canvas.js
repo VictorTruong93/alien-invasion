@@ -9,6 +9,7 @@ import CurrentScore from './CurrentScore';
 import FlyingObject from './FlyingObject';
 import Heart from './Heart';
 import StartButton from './StartButton';
+import Title from  './Title';
 
 const Canvas = (props) =>{
     const viewBox = [window.innerWidth / -2, 100 - window.innerHeight, window.innerWidth, window.innerHeight];
@@ -34,6 +35,7 @@ const Canvas = (props) =>{
             <FlyingObject position={{x: 150, y: -300}}/>
             <Heart position={{x: -300, y: 35}} />
             <StartButton onClick={() => console.log('FEND OFF THE INVASION')} />
+            <Title />
         </svg>
     );
 };

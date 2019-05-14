@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import CannonBall from './CannonBall';
 import CurrentScore from './CurrentScore';
 import FlyingObject from './FlyingObject';
-import Heart from './Heart';
 import StartButton from './StartButton';
 import Title from  './Title';
 import { gameHeight } from '../utils/constants';
@@ -33,11 +32,18 @@ const Canvas = (props) =>{
             <CannonBase />
             <CannonBall position={{x: 0, y: -100}}/>
             <CurrentScore score={15} />
-            <FlyingObject position={{x: -150, y: -300}}/>
-            <FlyingObject position={{x: 150, y: -300}}/>
-            <Heart position={{x: -300, y: 35}} />
-            <StartButton onClick={() => console.log('FEND OFF THE INVASION')} />
-            <Title />
+            { ! props.gameState.started &&
+                <g>
+                    <StartButton onClick={() => props.startGame()} />
+                    <Title />
+                </g>
+            }
+            { props.gameState.started &&
+                <g>
+                    <FlyingObject position={{x: -150, y: -300}}/>
+                    <FlyingObject position={{x: 150, y: -300}}/>
+                </g>
+            }
         </svg>
     );
 };
@@ -45,6 +51,12 @@ const Canvas = (props) =>{
 Canvas.propTypes = {
     angle: PropTypes.number.isRequired,
     trackMouse: PropTypes.func.isRequired,
+    gameState: PropTypes.shape({
+        started: PropTypes.bool.isRequired,
+        kills: PropTypes.number.isRequired,
+        lives: PropTypes.number.isRequired,
+    }).isRequired,
+    startGame: PropTypes.func.isRequired,
 };
 
 

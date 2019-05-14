@@ -10,10 +10,19 @@ import FlyingObject from './FlyingObject';
 import StartButton from './StartButton';
 import Title from  './Title';
 import { gameHeight } from '../utils/constants';
+import Heart from './Heart';
 
 
 const Canvas = (props) =>{
     const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight];
+    const lives = [];
+    for (let i = 0; i < props.gameState.lives; i++) {
+        const heartPosition = {
+        x: -180 - (i * 70),
+        y: 35
+        };
+        lives.push(<Heart key={i} position={heartPosition}/>);
+    }
     return(
         <svg
         id="alien-invasion-canvas"
@@ -37,7 +46,7 @@ const Canvas = (props) =>{
                 position={cannonBall.position}
                 />))}
             <CannonPipe rotation={props.angle} />
-            <CurrentScore score={15} />
+            <CurrentScore score={props.gameState.kills} />
             { ! props.gameState.started &&
                 <g>
                     <StartButton onClick={() => props.startGame()} />
@@ -49,6 +58,7 @@ const Canvas = (props) =>{
                 key={flyingObject.id}
                 position={flyingObject.position}
                 />))}
+                {lives}
         </svg>
     );
 };

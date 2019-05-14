@@ -5,7 +5,6 @@ const Sky = ()=>{
     const skyStyle = {
         fill: '#30abef',
     };
-    const skyWidth = 5000;
     const gameHeight = 1200;
     return(
         <rect

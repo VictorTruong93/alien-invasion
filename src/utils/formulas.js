@@ -27,7 +27,7 @@ export const calculateAngle = (x1, y1, x2, y2) => {
 
 export const getCanvasPosition = (event) => {
 
-    const svg = document.getElementById('aliens-go-home-canvas');
+    const svg = document.getElementById('alien-invasion-canvas');
     const point = svg.createSVGPoint();
 
     point.x = event.clientX;

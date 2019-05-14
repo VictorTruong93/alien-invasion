@@ -4,7 +4,7 @@ import moveBalls from './moveCannonBalls';
 
 function moveObjects(state, action) {
     if (!state.gameState.started) return state;
-    let cannonBalls = moveBalls(state.gamestate.cannonBalls);
+    let cannonBalls = moveBalls(state.gameState.cannonBalls);
     const mousePosition = action.mousePosition || {
         x: 0,
         y: 0,

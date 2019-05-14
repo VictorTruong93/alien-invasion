@@ -34,6 +34,7 @@ class App extends React.Component {
         gameState={this.props.gameState}
         startGame={this.props.startGame}
         trackMouse={event => (this.trackMouse(event))}
+        shoot={this.shoot}
       />
     );
   }

@@ -10,9 +10,11 @@ import FlyingObject from './FlyingObject';
 import Heart from './Heart';
 import StartButton from './StartButton';
 import Title from  './Title';
+import { gameHeight } from '../utils/constants';
+
 
 const Canvas = (props) =>{
-    const viewBox = [window.innerWidth / -2, 100 - window.innerHeight, window.innerWidth, window.innerHeight];
+    const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight];
     return(
         <svg
         id="alien-invasion-canvas"

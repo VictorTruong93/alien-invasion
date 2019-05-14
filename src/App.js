@@ -5,7 +5,10 @@ import Canvas from './components/Canvas';
 
 
 class App extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.shoot = this.shoot.bind(this)
+  }
 
   componentDidMount() {
     const self = this;
@@ -33,6 +36,9 @@ class App extends React.Component {
         trackMouse={event => (this.trackMouse(event))}
       />
     );
+  }
+  shoot(){
+    this.props.shoot(this.canvasMousePosition)
   }
 }
 

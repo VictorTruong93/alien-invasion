@@ -49,21 +49,15 @@ const Canvas = (props) =>{
 
 Canvas.propTypes = {
     angle: PropTypes.number.isRequired,
-    trackMouse: PropTypes.func.isRequired,
     gameState: PropTypes.shape({
         started: PropTypes.bool.isRequired,
         kills: PropTypes.number.isRequired,
         lives: PropTypes.number.isRequired,
-        flyingObjects: PropTypes.arrayOf(PropTypes.shape({
-            position: PropTypes.shape({
-                x: PropTypes.number.isRequired,
-                y: PropTypes.number.isRequired
-            }).isRequired,
-            id: PropTypes.number.isRequired,
-        })).isRequired,
     }).isRequired,
+    trackMouse: PropTypes.func.isRequired,
     startGame: PropTypes.func.isRequired,
 };
+
 
 
 export default Canvas;

@@ -38,12 +38,10 @@ class App extends React.Component {
 
 App.propTypes = {
   angle: PropTypes.number.isRequired,
-
   gameState: PropTypes.shape({
     started: PropTypes.bool.isRequired,
     kills: PropTypes.number.isRequired,
     lives: PropTypes.number.isRequired,
-
     flyingObjects: PropTypes.arrayOf(PropTypes.shape({
       position: PropTypes.shape({
         x: PropTypes.number.isRequired,

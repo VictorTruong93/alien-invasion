@@ -16,11 +16,11 @@ function moveObjects(state, action) {
     const angle = calculateAngle(0, 0, x, y);
     return {
         ...newState,
-        angle,
         gameState: {
             ...newState.gameState,
             flyingObjects,
         },
+        angle,
     };
 }
 

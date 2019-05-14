@@ -4,9 +4,9 @@ import { pathFromBezierCurve } from '../utils/formulas';
 
 const CannonPipe = (props) => {
     const cannonPipeStyle = {
-    fill: '#999',
-    stroke: '#666',
-    strokeWidth: '2px',
+        fill: '#999',
+        stroke: '#666',
+        strokeWidth: '2px',
     };
     const transform = `rotate(${props.rotation}, 0, 0)`;
 

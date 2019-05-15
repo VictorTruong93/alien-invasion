@@ -15,7 +15,7 @@ const moveVertically = keyframes`
 `;
 
 const Move = styled.g`
-    animation: ${moveVertically} 7s linear;
+    animation: ${moveVertically} 6s linear;
 `;
 
 const FlyingObject = props => (

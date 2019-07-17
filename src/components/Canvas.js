@@ -51,8 +51,7 @@ const Canvas = (props) =>{
                 <g>
                     <StartButton onClick={() => props.startGame()} />
                     <Title />
-                </g>
-            }
+                </g>}
             {props.gameState.flyingObjects.map(flyingObject => (
                 <FlyingObject
                 key={flyingObject.id}
